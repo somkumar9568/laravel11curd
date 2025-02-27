@@ -14,8 +14,15 @@
             </div>
             
             <div class="card-body">
-                @if(session('fail'))
-                    <div class="alert alert-danger">{{ session('fail') }}</div>
+                
+            @if(session()->has('success'))  
+                <div class="alert alert-success p-2">{{ session('success') }}</div>
+            @endif
+
+            @if(session('fail'))
+                    <script>
+                        alert("{{ session('fail') }}");
+                    </script>
                 @endif
                 <form action="{{ url('/login') }}" method="post">
                     @csrf

@@ -32,7 +32,9 @@ class SessionController extends Controller
 
             return redirect('/welcome')->with('success', 'Login Successful');
         } else {
-            return back()->with('fail', 'Invalid Credentials');
+             // Failure, redirect to register page with a message
+        return redirect()->route('AddUser')
+            ->with('fail', 'Invalid Credentials, please register now');
         }
     }
 

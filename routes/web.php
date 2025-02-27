@@ -21,6 +21,6 @@ Route::get('/delete/{id}', [UserController::class, 'deleteUser']);
 
 Route::get('/login', [SessionController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [SessionController::class, 'login']);
-Route::get('/welcome', [SessionController::class, 'welcome'])->middleware('auth.session');
+Route::get('/welcome', [SessionController::class, 'welcome']);
 Route::post('/update-profile', [SessionController::class, 'updateProfile'])->name('updateProfile');
 Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
